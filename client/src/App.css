@@ -1,0 +1,81 @@
+@import './styles/variables.css';
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.app {
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 40px;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.error-message {
+  background-color: var(--error-color);
+  color: white;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.low-priority {
+  border-left: 5px solid var(--low-priority);
+}
+
+.normal-priority {
+  border-left: 5px solid var(--normal-priority);
+}
+
+.high-priority {
+  border-left: 5px solid var(--high-priority);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .add-task-form {
+    flex-direction: column;
+  }
+  
+  .task-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .task-actions {
+    margin-top: 10px;
+    justify-content: flex-end;
+  }
+} 
