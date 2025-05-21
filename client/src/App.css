@@ -63,7 +63,6 @@ body {
   border-left: 5px solid var(--high-priority);
 }
 
-/* Responsive design */
 @media (max-width: 600px) {
   .add-task-form {
     flex-direction: column;

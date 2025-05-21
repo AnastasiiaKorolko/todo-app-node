@@ -1,4 +1,14 @@
-export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const ENV = {
+  VITE_API_URL: typeof import.meta !== 'undefined' && import.meta.env 
+    ? import.meta.env.VITE_API_URL 
+    : (typeof process !== 'undefined' && process.env ? process.env.VITE_API_URL : null),
+  
+  VITE_DEFAULT_THEME: typeof import.meta !== 'undefined' && import.meta.env 
+    ? import.meta.env.VITE_DEFAULT_THEME 
+    : (typeof process !== 'undefined' && process.env ? process.env.VITE_DEFAULT_THEME : null)
+};
+
+export const API_URL = ENV.VITE_API_URL || 'http://localhost:5000';
 
 export const PRIORITIES = {
   LOW: 'low',
@@ -32,5 +42,5 @@ export const THEMES = {
   DARK: 'dark'
 };
 
-export const DEFAULT_THEME = import.meta.env.VITE_DEFAULT_THEME || THEMES.LIGHT;
+export const DEFAULT_THEME = ENV.VITE_DEFAULT_THEME || THEMES.LIGHT;
 export const DEFAULT_PRIORITY = PRIORITIES.NORMAL;
