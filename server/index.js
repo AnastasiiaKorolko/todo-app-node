@@ -16,14 +16,14 @@ app.get('/tasks', (req, res) => {
 });
 
 app.post('/tasks', (req, res) => {
-  const newTtask = {
+  const newTask = {
     id: Date.now(),
     title: req.body.title,
     priority: req.body.priority || 'normal',
     completed: false
   };
-  tasks.push(newTtask);
-  res.status(201).json(newTtask)
+  tasks.push(newTask);
+  res.status(201).json(newTask)
 });
 
 app.put('/tasks/:id', (req, res) => {
@@ -31,7 +31,7 @@ app.put('/tasks/:id', (req, res) => {
 
   const task = tasks.find(task => task.id === id);
   if (!task) {
-    return res.sendStatus(404).json({ error: 'Task not found'})
+    return res.status(404).json({ error: 'Task not found'})
   }
 
   task.title = req.body.title ?? task.title;
